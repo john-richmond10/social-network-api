@@ -59,7 +59,7 @@ module.exports = {
         .catch((err) => res.status(400).json(err));
     },
 
-    removeFriend(req, res) {
+    deleteFriend(req, res) {
         User.findOneAndUpdate (
             {_id: req.params.userId},
             {$pull: {friends: req.params.friendId}},
